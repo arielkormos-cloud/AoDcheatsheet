@@ -31,7 +31,31 @@ h1{font-size:28px;margin:5px 0 4px}h2{font-size:21px;margin:26px 0 10px}.sub{col
 <div class="sep"></div><div class="label">Attack / defence keywords</div>
 <span class="chip weapon" data-key="accurate">Accurate x</span><span class="chip weapon" data-key="balanced">Balanced</span><span class="chip weapon" data-key="lethal">Lethal x+</span><span class="chip weapon" data-key="severe">Severe</span><span class="chip weapon" data-key="piercing">Piercing x</span><span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span><span class="chip weapon" data-key="saturate">Saturate</span><span class="chip def" data-key="save">Save</span>
 </div>
-<div class="small">Source: Games Workshop Kill Team Lite Rules and current Core Rules update log.</div>
+<div class="card"><h2>⚔️ Weapon Rules</h2><div class="label">Tap a keyword for the current rule summary</div>
+<span class="chip weapon" data-key="accurate">Accurate x</span>
+<span class="chip weapon" data-key="balanced">Balanced</span>
+<span class="chip weapon" data-key="blast">Blast x</span>
+<span class="chip weapon" data-key="brutal">Brutal</span>
+<span class="chip weapon" data-key="ceaseless">Ceaseless</span>
+<span class="chip weapon" data-key="devastating">Devastating x</span>
+<span class="chip weapon" data-key="heavy">Heavy</span>
+<span class="chip weapon" data-key="hot">Hot</span>
+<span class="chip weapon" data-key="lethal">Lethal x+</span>
+<span class="chip weapon" data-key="limited">Limited x</span>
+<span class="chip weapon" data-key="piercing">Piercing x</span>
+<span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span>
+<span class="chip weapon" data-key="punishing">Punishing</span>
+<span class="chip weapon" data-key="range">Range x</span>
+<span class="chip weapon" data-key="relentless">Relentless</span>
+<span class="chip weapon" data-key="rending">Rending</span>
+<span class="chip weapon" data-key="saturate">Saturate</span>
+<span class="chip weapon" data-key="seek">Seek / Seek Light</span>
+<span class="chip weapon" data-key="severe">Severe</span>
+<span class="chip weapon" data-key="shock">Shock</span>
+<span class="chip weapon" data-key="silent">Silent</span>
+<span class="chip weapon" data-key="stun">Stun</span>
+<span class="chip weapon" data-key="torrent">Torrent x</span>
+</div><div class="small">Source: Games Workshop Kill Team Lite Rules and current Core Rules update log.</div>
 </div>
 
 <div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">×</button><h3 id="modalTitle"></h3><p id="modalText"></p><a class="source" id="modalSource" target="_blank" rel="noopener">Open official Games Workshop rule</a></div></div>
@@ -57,6 +81,21 @@ saturate:["SATURATE","Official excerpt: “The defender cannot retain cover save
 save:["SAVE","The defender normally rolls three defence dice. Results meeting Save are successes; 6s are critical successes and 1s fail.",LITE],
 normalblock:["NORMAL DEFENCE SUCCESS","One normal defence success blocks one normal attack success. Two normal defence successes can be allocated to block one critical attack success.",LITE],
 criticalblock:["CRITICAL DEFENCE SUCCESS","One critical defence success can block either one normal attack success or one critical attack success.",LITE]
+,
+blast:["BLAST x","After shooting the primary target, shoot this weapon separately against each secondary target visible to and within x of the primary target. Secondary targets are valid regardless of Conceal. They are treated as in cover/obscured if the primary target was.",LITE],
+brutal:["BRUTAL","The opponent can only block with critical successes.",LITE],
+ceaseless:["CEASELESS","You can re-roll any of your attack dice showing one chosen result.",LITE],
+devastating:["DEVASTATING x","Each retained critical success immediately inflicts x damage. If a distance is shown before Devastating, the damage also affects each other operative visible to and within that distance. The critical success remains available to resolve later.",LITE],
+heavy:["HEAVY","Current wording: an operative cannot use this weapon in an activation or counteraction in which it moved, and it cannot move in an activation or counteraction in which it used this weapon. If Heavy specifies a permitted move action, only that move is allowed.",UPDATE],
+hot:["HOT","After using this weapon, roll one D6. If the result is lower than the weapon's Hit stat, the operative suffers damage equal to twice the result. Multiple attacks from one action still require only one Hot roll.",LITE],
+limited:["LIMITED x","After the weapon has been used x times during the battle, it is no longer available. Multiple attack sequences from one action, such as Blast, count as one use.",LITE],
+punishing:["PUNISHING","If you retain any critical successes, you can retain one failed attack die as a normal success instead of discarding it.",LITE],
+relentless:["RELENTLESS","You can re-roll any of your attack dice.",LITE],
+rending:["RENDING","If you retain any critical successes, you can retain one normal success as a critical success instead.",LITE],
+shock:["SHOCK","The first time you strike with a critical success in a sequence, also discard one unresolved normal success from your opponent, or one critical success if they have no unresolved normal successes.",LITE],
+silent:["SILENT","An operative can perform the Shoot action with this weapon while it has a Conceal order.",LITE],
+stun:["STUN","If you retain any critical successes, subtract 1 from the target's APL stat until the end of its next activation.",LITE],
+torrent:["TORRENT x","Select a valid primary target, then any number of other valid targets within x of it that are not within control range of friendly operatives. Shoot each target separately.",UPDATE]
 };
 const modal=document.getElementById('modal'),sheet=modal.querySelector('.sheet'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText'),source=document.getElementById('modalSource');let last=null;
 function openDef(k,e){const d=defs[k];if(!d)return;last=e;title.textContent=d[0];text.textContent=d[1];source.href=d[2];modal.classList.add('open');sheet.style.left='50%';sheet.style.top='50%';sheet.style.transform='translate(-50%,-50%)';if(e&&innerWidth>=700)requestAnimationFrame(()=>{const r=e.getBoundingClientRect(),s=sheet.getBoundingClientRect(),g=10,p=12;let l=r.right+g,t=r.top+r.height/2-s.height/2;if(l+s.width>innerWidth-p)l=r.left-s.width-g;if(l<p)l=(innerWidth-s.width)/2;t=Math.max(p,Math.min(t,innerHeight-s.height-p));sheet.style.left=l+'px';sheet.style.top=t+'px';sheet.style.transform='none'})}
