@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Shooting & Defence – Kill Team</title>
+<style>
+:root{--bg:#0f1115;--card:#181c23;--text:#f3f5f7;--muted:#aeb7c4;--line:#303845}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+.wrap{max-width:850px;margin:auto;padding:16px 14px 80px}a{color:#b9d9ff;text-decoration:none}.nav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 16px}.nav a{border:1px solid #3a4656;border-radius:999px;padding:6px 10px;background:#171c24;font-size:13px}
+h1{font-size:28px;margin:5px 0 4px}h2{font-size:21px;margin:26px 0 10px}.sub{color:var(--muted);font-size:14px;margin-bottom:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px;margin:12px 0}.quick{background:linear-gradient(180deg,#19212b,#151a21);border:1px solid #38506a}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}.steps{margin:8px 0 0 20px;padding:0}.steps li{margin:8px 0}.sep{height:1px;background:var(--line);margin:16px 0}.small{font-size:13px;color:var(--muted)}
+.chip{display:inline-block;border:1px solid #5c506e;background:#251f31;color:#eadfff;border-radius:999px;padding:4px 9px;margin:2px;font-size:13px;cursor:pointer}.chip.def{border-color:#53684f;background:#1f2b20;color:#e4f5df}.chip.weapon{border-color:#725c36;background:#302613;color:#ffe3a6}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:center;justify-content:center;z-index:999;padding:16px}.modal.open{display:flex}.sheet{position:fixed;width:min(92vw,560px);max-height:min(76vh,650px);overflow:auto;background:#1b2028;border:1px solid #4a5565;border-radius:18px;padding:20px 18px;box-shadow:0 18px 55px rgba(0,0,0,.55);left:50%;top:50%;transform:translate(-50%,-50%)}.sheet h3{margin:0 0 8px;padding-right:36px;font-size:20px}.sheet p{margin:0;color:#e4e8ed;white-space:pre-line}.source{display:inline-block;margin-top:14px;font-size:13px}.close{position:absolute;right:12px;top:12px;border:0;background:#313844;color:#fff;border-radius:999px;width:32px;height:32px;font-size:18px}
+</style></head><body><div class="wrap"><div class="nav"><a href="index.html">⌂ Teams</a><a href="shooting.html">🎯 Shooting & Defence</a><a href="aod.html">AoD</a><a href="cc.html">Canoptek Circle</a><a href="deathwatch.html">Deathwatch</a><a href="plague-marines.html">Plague Marines</a></div>
+<h1>Shooting & Defence</h1><div class="sub">Current Kill Team shooting sequence • tap highlighted terms for rule details</div>
+
+<div class="card quick"><h2>🎯 Shoot action</h2><ol class="steps">
+<li><strong>Select a ranged weapon.</strong> Check any <span class="chip weapon" data-key="range">Range x</span> or other weapon restrictions.</li>
+<li><strong>Select a valid target.</strong> Check <span class="chip" data-key="visible">Visible</span>, <span class="chip" data-key="valid">Valid Target</span>, <span class="chip" data-key="cover">Cover</span>, <span class="chip" data-key="control">Control Range</span> and <span class="chip" data-key="obscured">Obscured</span>.</li>
+<li><strong>Roll attack dice.</strong> Roll the weapon's Atk dice; results meeting Hit are successes. Check <span class="chip weapon" data-key="accurate">Accurate x</span>, <span class="chip weapon" data-key="balanced">Balanced</span>, <span class="chip weapon" data-key="lethal">Lethal x+</span>, <span class="chip weapon" data-key="severe">Severe</span>, etc.</li>
+<li><strong>Defender rolls defence dice.</strong> Normally 3 dice, modified by rules such as <span class="chip weapon" data-key="piercing">Piercing x</span> or <span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span>.</li>
+<li><strong>Resolve defence dice.</strong> The defender uses successful saves to block successful attack dice.</li>
+<li><strong>Resolve remaining attack dice.</strong> Unblocked normal successes inflict Normal Dmg; unblocked critical successes inflict Critical Dmg.</li>
+</ol></div>
+
+<div class="card quick"><h2>🛡️ Defending against shooting</h2><ol class="steps">
+<li><strong>Collect defence dice.</strong> Start with 3 unless a rule changes this. <span class="chip weapon" data-key="piercing">Piercing</span> is the common modifier.</li>
+<li><strong>Retain cover save if allowed.</strong> If the target is in <span class="chip" data-key="cover">Cover</span>, one defence die can normally be retained as a normal success without rolling. <span class="chip weapon" data-key="saturate">Saturate</span> prevents this.</li>
+<li><strong>Roll remaining dice.</strong> Results meeting the operative's <span class="chip def" data-key="save">Save</span> are successful. A 6 is critical; a 1 fails.</li>
+<li><strong>Block attack successes.</strong> <span class="chip def" data-key="normalblock">Normal save</span> blocks a normal hit. <span class="chip def" data-key="criticalblock">Critical save</span> blocks a normal or critical hit. Two normal saves can block one critical hit.</li>
+<li><strong>Take damage.</strong> Only unblocked attack successes inflict weapon damage.</li>
+</ol></div>
+
+<div class="card"><div class="label">Target-selection keywords</div>
+<span class="chip" data-key="visible">Visible</span><span class="chip" data-key="valid">Valid Target</span><span class="chip" data-key="cover">Cover</span><span class="chip" data-key="control">Control Range</span><span class="chip" data-key="obscured">Obscured</span><span class="chip" data-key="vantage">Vantage</span><span class="chip weapon" data-key="seek">Seek</span>
+<div class="sep"></div><div class="label">Attack / defence keywords</div>
+<span class="chip weapon" data-key="accurate">Accurate x</span><span class="chip weapon" data-key="balanced">Balanced</span><span class="chip weapon" data-key="lethal">Lethal x+</span><span class="chip weapon" data-key="severe">Severe</span><span class="chip weapon" data-key="piercing">Piercing x</span><span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span><span class="chip weapon" data-key="saturate">Saturate</span><span class="chip def" data-key="save">Save</span>
+</div>
+<div class="small">Source: Games Workshop Kill Team Lite Rules and current Core Rules update log.</div>
+</div>
+
+<div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">×</button><h3 id="modalTitle"></h3><p id="modalText"></p><a class="source" id="modalSource" target="_blank" rel="noopener">Open official Games Workshop rule</a></div></div>
+<script>
+const LITE="https://assets.warhammer-community.com/rules-downloads/kill-team/key-downloads/kill-team-lite-rules/killteam_keydownloads_literules_eng_02.10.24.pdf";
+const UPDATE="https://assets.warhammer-community.com/eng_19-11_kill_team_core_rules_update_log-kiltwexvpq-yqzwkq1kpu.pdf";
+const defs={
+visible:["VISIBLE","Official-rule summary: determine visibility from the operative's head to any part of what it is trying to see, excluding bases.",LITE],
+valid:["VALID TARGET","Engage: visible is enough. Conceal: the intended target must be visible and not in cover, unless another rule changes target selection.",LITE],
+cover:["COVER","Cover is determined between operatives using intervening terrain within the target's control range. A target within 2 inches of the other operative cannot be in cover.",LITE],
+control:["CONTROL RANGE","Control range requires visibility and being within 1 inch. It is mutual between operatives.",LITE],
+obscured:["OBSCURED","Cover and obscured are separate. Under the current update, an operative cannot use the same terrain feature as both cover and obscuring in one sequence; the defender chooses one.",UPDATE],
+vantage:["VANTAGE","Vantage terrain modifies how elevated operatives interact with targets below. Use the current Core Rules terrain wording for the exact target-selection and cover interaction.",LITE],
+seek:["SEEK","A Concealed target cannot use the relevant terrain for cover when valid targets are selected. Seek Light only affects Light terrain. Any cover save it still has is not removed by Seek.",LITE],
+range:["RANGE x","Only targets within the stated distance of the active operative can be valid targets.",LITE],
+accurate:["ACCURATE x","Official excerpt: “You can retain up to x attack dice as normal successes without rolling them.”",LITE],
+balanced:["BALANCED","Official excerpt: “You can re-roll one of your attack dice.”",LITE],
+lethal:["LETHAL x+","Successes equal to or greater than x are critical successes.",LITE],
+severe:["SEVERE","If no critical success is retained, one normal success can be changed to a critical success. Critical-triggered rules can then apply.",LITE],
+piercing:["PIERCING x","The defender collects x fewer defence dice. Piercing 1 therefore normally reduces the defence pool from 3 dice to 2.",LITE],
+piercingcrits:["PIERCING CRITS x","This uses the Piercing effect only if the attacker retained one or more critical successes.",LITE],
+saturate:["SATURATE","Official excerpt: “The defender cannot retain cover saves.”",LITE],
+save:["SAVE","The defender normally rolls three defence dice. Results meeting Save are successes; 6s are critical successes and 1s fail.",LITE],
+normalblock:["NORMAL DEFENCE SUCCESS","One normal defence success blocks one normal attack success. Two normal defence successes can be allocated to block one critical attack success.",LITE],
+criticalblock:["CRITICAL DEFENCE SUCCESS","One critical defence success can block either one normal attack success or one critical attack success.",LITE]
+};
+const modal=document.getElementById('modal'),sheet=modal.querySelector('.sheet'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText'),source=document.getElementById('modalSource');let last=null;
+function openDef(k,e){const d=defs[k];if(!d)return;last=e;title.textContent=d[0];text.textContent=d[1];source.href=d[2];modal.classList.add('open');sheet.style.left='50%';sheet.style.top='50%';sheet.style.transform='translate(-50%,-50%)';if(e&&innerWidth>=700)requestAnimationFrame(()=>{const r=e.getBoundingClientRect(),s=sheet.getBoundingClientRect(),g=10,p=12;let l=r.right+g,t=r.top+r.height/2-s.height/2;if(l+s.width>innerWidth-p)l=r.left-s.width-g;if(l<p)l=(innerWidth-s.width)/2;t=Math.max(p,Math.min(t,innerHeight-s.height-p));sheet.style.left=l+'px';sheet.style.top=t+'px';sheet.style.transform='none'})}
+function closeDef(){modal.classList.remove('open');if(last)last.focus({preventScroll:true})}
+document.querySelectorAll('[data-key]').forEach(e=>e.onclick=()=>openDef(e.dataset.key,e));closeBtn.onclick=closeDef;modal.onclick=e=>{if(e.target===modal)closeDef()};document.onkeydown=e=>{if(e.key==='Escape')closeDef()};
+</script></body></html>
