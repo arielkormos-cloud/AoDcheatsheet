@@ -31,7 +31,7 @@ h1{font-size:28px;margin:5px 0 4px}h2{font-size:21px;margin:26px 0 10px}.sub{col
 <div class="sep"></div><div class="label">Attack / defence keywords</div>
 <span class="chip weapon" data-key="accurate">Accurate x</span><span class="chip weapon" data-key="balanced">Balanced</span><span class="chip weapon" data-key="lethal">Lethal x+</span><span class="chip weapon" data-key="severe">Severe</span><span class="chip weapon" data-key="piercing">Piercing x</span><span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span><span class="chip weapon" data-key="saturate">Saturate</span><span class="chip def" data-key="save">Save</span>
 </div>
-<div class="card"><h2>⚔️ Weapon Rules</h2><div class="label">Tap a keyword for the current rule summary</div>
+<div class="card"><h2>⚔️ Weapon Rules</h2><div class="label">Tap a keyword for the current official-rule mechanics</div>
 <span class="chip weapon" data-key="accurate">Accurate x</span>
 <span class="chip weapon" data-key="balanced">Balanced</span>
 <span class="chip weapon" data-key="blast">Blast x</span>
@@ -63,39 +63,38 @@ h1{font-size:28px;margin:5px 0 4px}h2{font-size:21px;margin:26px 0 10px}.sub{col
 const LITE="https://assets.warhammer-community.com/rules-downloads/kill-team/key-downloads/kill-team-lite-rules/killteam_keydownloads_literules_eng_02.10.24.pdf";
 const UPDATE="https://assets.warhammer-community.com/eng_19-11_kill_team_core_rules_update_log-kiltwexvpq-yqzwkq1kpu.pdf";
 const defs={
-visible:["VISIBLE","Official-rule summary: determine visibility from the operative's head to any part of what it is trying to see, excluding bases.",LITE],
-valid:["VALID TARGET","Engage: visible is enough. Conceal: the intended target must be visible and not in cover, unless another rule changes target selection.",LITE],
-cover:["COVER","Cover is determined between operatives using intervening terrain within the target's control range. A target within 2 inches of the other operative cannot be in cover.",LITE],
-control:["CONTROL RANGE","Control range requires visibility and being within 1 inch. It is mutual between operatives.",LITE],
-obscured:["OBSCURED","Cover and obscured are separate. Under the current update, an operative cannot use the same terrain feature as both cover and obscuring in one sequence; the defender chooses one.",UPDATE],
-vantage:["VANTAGE","Vantage terrain modifies how elevated operatives interact with targets below. Use the current Core Rules terrain wording for the exact target-selection and cover interaction.",LITE],
-seek:["SEEK","A Concealed target cannot use the relevant terrain for cover when valid targets are selected. Seek Light only affects Light terrain. Any cover save it still has is not removed by Seek.",LITE],
-range:["RANGE x","Only targets within the stated distance of the active operative can be valid targets.",LITE],
-accurate:["ACCURATE x","Official excerpt: “You can retain up to x attack dice as normal successes without rolling them.”",LITE],
-balanced:["BALANCED","Official excerpt: “You can re-roll one of your attack dice.”",LITE],
-lethal:["LETHAL x+","Successes equal to or greater than x are critical successes.",LITE],
-severe:["SEVERE","If no critical success is retained, one normal success can be changed to a critical success. Critical-triggered rules can then apply.",LITE],
-piercing:["PIERCING x","The defender collects x fewer defence dice. Piercing 1 therefore normally reduces the defence pool from 3 dice to 2.",LITE],
-piercingcrits:["PIERCING CRITS x","This uses the Piercing effect only if the attacker retained one or more critical successes.",LITE],
-saturate:["SATURATE","Official excerpt: “The defender cannot retain cover saves.”",LITE],
-save:["SAVE","The defender normally rolls three defence dice. Results meeting Save are successes; 6s are critical successes and 1s fail.",LITE],
-normalblock:["NORMAL DEFENCE SUCCESS","One normal defence success blocks one normal attack success. Two normal defence successes can be allocated to block one critical attack success.",LITE],
-criticalblock:["CRITICAL DEFENCE SUCCESS","One critical defence success can block either one normal attack success or one critical attack success.",LITE]
-,
-blast:["BLAST x","After shooting the primary target, shoot this weapon separately against each secondary target visible to and within x of the primary target. Secondary targets are valid regardless of Conceal. They are treated as in cover/obscured if the primary target was.",LITE],
-brutal:["BRUTAL","The opponent can only block with critical successes.",LITE],
-ceaseless:["CEASELESS","You can re-roll any of your attack dice showing one chosen result.",LITE],
-devastating:["DEVASTATING x","Each retained critical success immediately inflicts x damage. If a distance is shown before Devastating, the damage also affects each other operative visible to and within that distance. The critical success remains available to resolve later.",LITE],
-heavy:["HEAVY","Current wording: an operative cannot use this weapon in an activation or counteraction in which it moved, and it cannot move in an activation or counteraction in which it used this weapon. If Heavy specifies a permitted move action, only that move is allowed.",UPDATE],
-hot:["HOT","After using this weapon, roll one D6. If the result is lower than the weapon's Hit stat, the operative suffers damage equal to twice the result. Multiple attacks from one action still require only one Hot roll.",LITE],
-limited:["LIMITED x","After the weapon has been used x times during the battle, it is no longer available. Multiple attack sequences from one action, such as Blast, count as one use.",LITE],
-punishing:["PUNISHING","If you retain any critical successes, you can retain one failed attack die as a normal success instead of discarding it.",LITE],
-relentless:["RELENTLESS","You can re-roll any of your attack dice.",LITE],
-rending:["RENDING","If you retain any critical successes, you can retain one normal success as a critical success instead.",LITE],
-shock:["SHOCK","The first time you strike with a critical success in a sequence, also discard one unresolved normal success from your opponent, or one critical success if they have no unresolved normal successes.",LITE],
-silent:["SILENT","An operative can perform the Shoot action with this weapon while it has a Conceal order.",LITE],
-stun:["STUN","If you retain any critical successes, subtract 1 from the target's APL stat until the end of its next activation.",LITE],
-torrent:["TORRENT x","Select a valid primary target, then any number of other valid targets within x of it that are not within control range of friendly operatives. Shoot each target separately.",UPDATE]
+visible:["VISIBLE","Determine visibility from the active operative's head to any part of what it is trying to see, excluding bases.",LITE],
+valid:["VALID TARGET","For shooting, an operative with an Engage order can normally be selected if it is visible. A Concealed operative can normally only be selected if it is visible and not in cover, unless another rule changes this.",LITE],
+cover:["COVER","Cover is determined using intervening terrain within the target's control range. A target within 2 inches of the shooter cannot be in cover. Cover can protect a Concealed operative from being selected and can also allow a defence die to be retained as a cover save.",LITE],
+control:["CONTROL RANGE","An operative is within another operative's control range when it is visible to and within 1 inch of that operative. Control range is mutual.",LITE],
+obscured:["OBSCURED","Cover and obscured are separate. Under the current rules, an operative cannot use the same terrain feature as both cover and obscuring in the same shooting sequence; if both would apply from that terrain, the defender chooses one.",UPDATE],
+vantage:["VANTAGE","Vantage terrain changes how elevated operatives interact with targets below, including concealed targets and cover. Apply the current Vantage rules when determining target validity and cover.",LITE],
+seek:["SEEK / SEEK LIGHT","When selecting a valid target, a Concealed operative cannot use terrain for cover against Seek. Seek Light only ignores Light terrain for this purpose. This can make a visible Concealed operative targetable, but it does not itself remove any cover save the target is otherwise allowed to retain.",LITE],
+range:["RANGE x","The target must be within x of the active operative to be a valid target for this weapon. If it is farther away than x, it cannot be selected.",LITE],
+accurate:["ACCURATE x","Before rolling attack dice, you can retain up to x of those dice as normal successes without rolling them. Those retained dice have no numerical result, so they cannot be re-rolled or treated as a specific dice result.",LITE],
+balanced:["BALANCED","After rolling attack dice, you can re-roll one of those attack dice. A die retained automatically before rolling was never rolled and cannot be re-rolled.",LITE],
+lethal:["LETHAL x+","Each successful attack die result equal to or greater than x is a critical success instead of a normal success. Example: Lethal 5+ makes successful 5s and 6s critical successes.",LITE],
+severe:["SEVERE","If you retain no critical successes, change one retained normal success into a critical success. Under the April 2026 update, that critical can trigger Devastating and Piercing Crits, but it does not trigger Punishing or Rending.",UPDATE],
+piercing:["PIERCING x","When the defender collects defence dice, reduce the number collected by x. Example: Piercing 1 normally reduces a 3-die defence pool to 2 dice. This happens before defence dice are rolled or retained as cover saves.",LITE],
+piercingcrits:["PIERCING CRITS x","Apply Piercing x only if the attacker retained at least one critical success. If no critical success is retained, this rule has no effect. A critical created by Severe can activate Piercing Crits under the current rules.",UPDATE],
+saturate:["SATURATE","The defender cannot retain a defence die as a cover save. The target can still count as being in cover for other rules, including whether a Concealed operative is a valid target.",LITE],
+save:["SAVE","The defender normally rolls three defence dice. Each result equal to or greater than the operative's Save stat is a normal success; a 6 is a critical success and a 1 fails.",LITE],
+normalblock:["NORMAL DEFENCE SUCCESS","One normal defence success blocks one normal attack success. Two normal defence successes can be used together to block one critical attack success.",LITE],
+criticalblock:["CRITICAL DEFENCE SUCCESS","One critical defence success can block either one normal attack success or one critical attack success.",LITE],
+blast:["BLAST x","Resolve the attack against the primary target first. Then resolve a separate attack with the same weapon against every other operative visible to and within x of the primary target. Those secondary operatives are treated as valid targets regardless of Conceal. They use the same cover and obscured status that was determined for the primary target. Current commentary also confirms that rules preventing selection as a valid target do not stop a Blast secondary attack, because secondary targets are not selected.",UPDATE],
+brutal:["BRUTAL","During a Fight action, your opponent can only use critical successes to block successes from this weapon. Their normal successes cannot be used to block.",LITE],
+ceaseless:["CEASELESS","After rolling attack dice, choose one dice result, such as all 2s. You can re-roll any or all of your attack dice showing that chosen result.",LITE],
+devastating:["DEVASTATING x","Each retained critical success immediately inflicts x damage on the operative this weapon is being used against. The critical success is not discarded and is still resolved later in the sequence. If a distance appears before Devastating, each retained critical also inflicts x damage on every other operative visible to and within that distance. Current commentary states that this Devastating damage is not treated as additional damage inflicted by the attack die for rules that reduce or ignore attack-die damage.",UPDATE],
+heavy:["HEAVY","Current April 2026 wording: an operative cannot use this weapon during an activation or counteraction in which it moved, and it cannot move during an activation or counteraction in which it used this weapon. If the rule is Heavy (x only), where x names a move action such as Dash, only that named move is allowed. Heavy does not stop the Guard action.",UPDATE],
+hot:["HOT","After the operative uses this weapon, roll one D6. If the result is lower than the weapon's Hit stat, inflict damage on that operative equal to twice the dice result. If the weapon is used multiple times in one action, such as through Blast, make only one Hot roll for that action.",LITE],
+limited:["LIMITED x","Track how many times the operative uses this weapon during the battle. After it has been used x times, that operative no longer has the weapon for the rest of the battle. If one action creates multiple attack sequences, such as Blast, the whole action counts as one use.",LITE],
+punishing:["PUNISHING","If you retained at least one critical success, you can retain one failed attack die as a normal success instead of discarding it. Under the April 2026 update, a critical created by Severe does not activate Punishing.",UPDATE],
+relentless:["RELENTLESS","After rolling attack dice, you can re-roll any of those attack dice. A die still cannot be re-rolled more than once unless another rule specifically says otherwise.",LITE],
+rending:["RENDING","If you retained at least one critical success, you can change one retained normal success into a critical success. Under the April 2026 update, a critical created by Severe does not activate Rending.",UPDATE],
+shock:["SHOCK","During a Fight action, the first time you strike with a critical success in that sequence, also discard one of your opponent's unresolved normal successes. If they have no unresolved normal successes, discard one of their unresolved critical successes instead.",LITE],
+silent:["SILENT","An operative can perform the Shoot action with this weapon while it has a Conceal order. This overrides the normal restriction that prevents a Concealed operative from performing Shoot.",LITE],
+stun:["STUN","If you retain at least one critical success, subtract 1 from the APL stat of the operative this weapon is being used against until the end of that operative's next activation.",LITE],
+torrent:["TORRENT x","Current April 2026 wording: select one valid target normally as the primary target. Then select any number of other valid targets within x of that primary target as secondary targets, except a secondary target cannot be within control range of a friendly operative. Resolve a separate shooting attack against the primary target and every secondary target, in any order you choose.",UPDATE]
 };
 const modal=document.getElementById('modal'),sheet=modal.querySelector('.sheet'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText');let last=null;
 function openDef(k,e){const d=defs[k];if(!d)return;last=e;title.textContent=d[0];text.textContent=d[1];modal.classList.add('open');sheet.style.left='50%';sheet.style.top='50%';sheet.style.transform='translate(-50%,-50%)';if(e&&innerWidth>=700)requestAnimationFrame(()=>{const r=e.getBoundingClientRect(),s=sheet.getBoundingClientRect(),g=10,p=12;let l=r.right+g,t=r.top+r.height/2-s.height/2;if(l+s.width>innerWidth-p)l=r.left-s.width-g;if(l<p)l=(innerWidth-s.width)/2;t=Math.max(p,Math.min(t,innerHeight-s.height-p));sheet.style.left=l+'px';sheet.style.top=t+'px';sheet.style.transform='none'})}
