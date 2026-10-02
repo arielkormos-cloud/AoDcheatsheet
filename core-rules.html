@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Core Rules – Kill Team</title>
+<style>
+:root{--bg:#0f1115;--card:#181c23;--text:#f3f5f7;--muted:#aeb7c4;--line:#303845;--blue:#18283a;--purple:#251f31;--green:#1f2b20;--gold:#302613}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.48}
+.wrap{max-width:900px;margin:auto;padding:16px 14px 90px}a{color:#b9d9ff;text-decoration:none}.nav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 16px}.nav a{border:1px solid #3a4656;border-radius:999px;padding:6px 10px;background:#171c24;font-size:13px}
+h1{font-size:29px;margin:5px 0 4px}h2{font-size:21px;margin:28px 0 10px}h3{font-size:17px;margin:16px 0 7px}.sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px;margin:12px 0}.quick{background:linear-gradient(180deg,#19212b,#151a21);border-color:#38506a}.warn{border-color:#6b5a38;background:#211d15}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}.small{font-size:13px;color:var(--muted)}.sep{height:1px;background:var(--line);margin:14px 0}ul,ol{padding-left:22px;margin:7px 0}li{margin:5px 0}
+.toc{display:flex;gap:7px;flex-wrap:wrap}.toc a{border:1px solid #3a4656;border-radius:999px;padding:6px 9px;background:#171c24;font-size:13px}.stat{font-weight:750;color:#fff}
+.chip{display:inline-block;border:1px solid #5c506e;background:var(--purple);color:#eadfff;border-radius:999px;padding:4px 9px;margin:2px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}.chip.action{border-color:#47617d;background:var(--blue);color:#dceeff}.chip.def{border-color:#53684f;background:var(--green);color:#e4f5df}.chip.weapon{border-color:#725c36;background:var(--gold);color:#ffe3a6}.chip:hover{filter:brightness(1.15)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:center;justify-content:center;z-index:999;padding:16px}.modal.open{display:flex}.sheet{position:fixed;width:min(92vw,600px);max-height:min(78vh,680px);overflow:auto;background:#1b2028;border:1px solid #4a5565;border-radius:18px;padding:20px 18px;box-shadow:0 18px 55px rgba(0,0,0,.55);left:50%;top:50%;transform:translate(-50%,-50%)}.sheet h3{margin:0 0 8px;padding-right:36px;font-size:20px}.sheet p{margin:0;color:#e4e8ed;white-space:pre-line}.close{position:absolute;right:12px;top:12px;border:0;background:#313844;color:#fff;border-radius:999px;width:32px;height:32px;font-size:18px}.footer{color:var(--muted);font-size:12px;margin-top:34px;text-align:center}
+</style>
+</head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">⌂ Teams</a><a href="core-rules.html">📘 Core Rules</a><a href="shooting.html">🎯 Shooting & Defence</a><a href="aod.html">AoD</a><a href="cc.html">Canoptek Circle</a><a href="deathwatch.html">Deathwatch</a><a href="plague-marines.html">Plague Marines</a></div>
+
+<h1>📘 Kill Team Core Rules</h1>
+<div class="sub">Fast, mobile-friendly reference to the current Kill Team rules • official terminology • rules text paraphrased from Games Workshop sources</div>
+
+<div class="card warn"><strong>About the wording</strong><br><span class="small">This is a practical rules reference, not a reproduction of the copyrighted Core Book. Official rule names and terminology are retained, while explanations are paraphrased. For exact Games Workshop text, use the official Lite Rules/Core Rules Update Log links at the bottom.</span></div>
+
+<div class="card quick">
+<div class="label">Jump to</div>
+<div class="toc">
+<a href="#flow">Battle flow</a><a href="#orders">Orders</a><a href="#actions">Actions</a><a href="#shoot">Shoot</a><a href="#fight">Fight</a><a href="#targeting">Targeting</a><a href="#movement">Movement</a><a href="#terrain">Terrain</a><a href="#damage">Damage</a><a href="#weapons">Weapon rules</a><a href="#updates">Current clarifications</a>
+</div>
+</div>
+
+<h2 id="flow">1. Battle flow</h2>
+<div class="grid">
+<div class="card"><div class="label">Set up</div><strong>Prepare the killzone and deploy.</strong><ul><li>Standard killzone is normally <b>30" × 22"</b> unless the mission says otherwise.</li><li>Determine initiative and drop zones according to the mission.</li><li>Players alternate deploying roughly one third of their team at a time, starting with the player who has initiative.</li><li>Operatives begin wholly within their drop zone and normally start with a <span class="chip" data-key="conceal">Conceal order</span>.</li></ul></div>
+<div class="card"><div class="label">Turning points</div><strong>Normally 4 turning points.</strong><ul><li>Each turning point has a <b>Strategy phase</b> then a <b>Firefight phase</b>.</li><li>At the start of Strategy, determine initiative and ready operatives.</li><li>Players alternate strategic gambits/strategy ploys until both pass in succession.</li><li>In Firefight, players alternate activations, beginning with the player who has initiative.</li></ul></div>
+</div>
+
+<div class="card">
+<h3>Command points</h3>
+<ul><li>Each player starts the battle with <b>2CP</b>.</li><li>First Strategy phase: both players gain <b>1CP</b>.</li><li>Later Strategy phases: the player with initiative gains <b>1CP</b>; the player without initiative gains <b>2CP</b>.</li><li>Strategy and firefight ploys normally cost 1CP unless stated otherwise.</li><li><span class="chip" data-key="commandreroll">Command Re-roll</span> can re-roll one attack or defence die after rolling.</li></ul>
+</div>
+
+<div class="card quick">
+<div class="label">Activation</div>
+<ol>
+<li>Select a <b>ready</b> friendly operative.</li>
+<li>Choose its <span class="chip" data-key="engage">Engage</span> or <span class="chip" data-key="conceal">Conceal</span> order.</li>
+<li>Perform actions. Each action spends AP; total AP spent cannot exceed the operative's current <span class="chip" data-key="apl">APL</span>.</li>
+<li>Unless a rule says otherwise, the same action cannot normally be performed more than once during that activation.</li>
+<li>When finished, the operative becomes <b>expended</b>.</li>
+</ol>
+<div class="sep"></div>
+<strong>All your operatives expended first?</strong> You may get <span class="chip action" data-key="counteract">Counteract</span> opportunities while the opponent still has ready operatives.
+</div>
+
+<h2 id="orders">2. Orders, ready & expended</h2>
+<div class="grid">
+<div class="card"><span class="chip" data-key="engage">Engage order</span><p>Normal offensive order. The operative can normally Shoot and Charge, can be targeted if visible, and can counteract when eligible.</p></div>
+<div class="card"><span class="chip" data-key="conceal">Conceal order</span><p>Defensive order. A Concealed operative in cover is normally not a valid target, but it normally cannot Shoot or Charge unless another rule permits it.</p></div>
+<div class="card"><div class="label">Ready</div><strong>Can be activated.</strong><p class="small">Ready/expended is separate from Engage/Conceal.</p></div>
+<div class="card"><div class="label">Expended</div><strong>Has already activated.</strong><p class="small">An expended Engage operative may later be chosen to counteract if the requirements are met.</p></div>
+</div>
+
+<h2 id="actions">3. Universal actions</h2>
+<div class="card">
+<table>
+<tr><th>Action</th><th>Cost</th><th>Practical rule</th></tr>
+<tr><td><span class="chip action" data-key="reposition">Reposition</span></td><td>1AP</td><td>Move up to Move. Normally cannot enter enemy control range.</td></tr>
+<tr><td><span class="chip action" data-key="dash">Dash</span></td><td>1AP</td><td>Move up to 3". It cannot be used to climb.</td></tr>
+<tr><td><span class="chip action" data-key="charge">Charge</span></td><td>1AP</td><td>Move like Reposition with +2" allowance and finish in enemy control range.</td></tr>
+<tr><td><span class="chip action" data-key="fallback">Fall Back</span></td><td>2AP</td><td>Leave enemy control range. You may pass through control range but must finish outside it.</td></tr>
+<tr><td><span class="chip action" data-key="shoot">Shoot</span></td><td>1AP</td><td>Resolve a ranged attack. Normally requires Engage and no enemy in your control range.</td></tr>
+<tr><td><span class="chip action" data-key="fight">Fight</span></td><td>1AP</td><td>Resolve melee against an enemy in control range.</td></tr>
+</table>
+</div>
+
+<h2 id="shoot">4. Shoot sequence</h2>
+<div class="card quick"><ol>
+<li><b>Select a ranged weapon.</b> Apply restrictions such as <span class="chip weapon" data-key="range">Range x</span> or <span class="chip weapon" data-key="heavy">Heavy</span>.</li>
+<li><b>Select a valid target.</b> Check <span class="chip" data-key="visible">Visible</span>, order, <span class="chip" data-key="cover">Cover</span>, <span class="chip" data-key="obscured">Obscured</span>, range and control-range restrictions.</li>
+<li><b>Roll attack dice.</b> Roll the weapon's Atk characteristic. Results meeting Hit succeed; 6 is critical; 1 fails.</li>
+<li><b>Defender collects defence dice.</b> Normally 3, modified by effects such as <span class="chip weapon" data-key="piercing">Piercing x</span>.</li>
+<li><b>Cover save.</b> If eligible, the defender may retain a defence die as a normal success without rolling it. <span class="chip weapon" data-key="saturate">Saturate</span> stops this.</li>
+<li><b>Roll remaining defence dice.</b> Results meeting Save succeed; 6 is critical; 1 fails.</li>
+<li><b>Block attack successes.</b> One normal save blocks one normal hit; two normal saves can block one critical hit; one critical save blocks one normal or critical hit.</li>
+<li><b>Resolve unblocked attacks.</b> Normal hits inflict Normal Dmg; critical hits inflict Critical Dmg.</li>
+</ol>
+<a href="shooting.html"><strong>Open the dedicated Shooting & Defence page →</strong></a>
+</div>
+
+<h2 id="fight">5. Fight sequence</h2>
+<div class="card quick"><ol>
+<li>The attacker selects an enemy operative within its <span class="chip" data-key="control">control range</span>. That enemy retaliates.</li>
+<li>Both players choose one melee weapon.</li>
+<li>Both roll attack dice. Results meeting Hit succeed; 6 is critical; 1 fails.</li>
+<li>Starting with the attacker, players alternate resolving one success at a time.</li>
+<li><b>Strike:</b> inflict the selected weapon's normal or critical damage.</li>
+<li><b>Block:</b> discard one opponent success. A normal blocks a normal; a critical blocks a normal or critical.</li>
+<li>If one player has no successes remaining, the other player can resolve all remaining successes.</li>
+</ol></div>
+
+<h2 id="targeting">6. Visibility, cover, obscured & valid targets</h2>
+<div class="grid">
+<div class="card"><span class="chip" data-key="visible">Visible</span><p>Visibility is literal line of sight from the viewing operative's head to the target model, ignoring bases.</p></div>
+<div class="card"><span class="chip" data-key="control">Control range</span><p>Usually requires visibility and being within 1". Control range is mutual once established.</p></div>
+<div class="card"><span class="chip" data-key="cover">Cover</span><p>Intervening terrain close enough to the target can provide cover. An operative within 2" of the shooter cannot use cover against that shooter.</p></div>
+<div class="card"><span class="chip" data-key="obscured">Obscured</span><p>A separate protection created by qualifying Heavy terrain/effects between attacker and target. Cover and obscured are not the same rule.</p></div>
+</div>
+<div class="card">
+<div class="label">Fast valid-target test</div>
+<ul><li><b>Engage target:</b> normally valid if visible and all other restrictions are satisfied.</li><li><b>Conceal target:</b> normally valid only if visible and <b>not in cover</b>, unless a rule such as Seek/Vantage changes that.</li><li>A target cannot be in cover from and obscured by the <b>same terrain feature</b> in one shooting sequence. If both would apply from that feature, the defender chooses one.</li></ul>
+</div>
+
+<h2 id="movement">7. Movement</h2>
+<div class="card">
+<ul><li>Movement is measured by the actual path the operative's base travels.</li><li>An operative must finish a move where its base can legally be placed.</li><li><span class="chip action" data-key="reposition">Reposition</span>, <span class="chip action" data-key="dash">Dash</span>, <span class="chip action" data-key="charge">Charge</span> and <span class="chip action" data-key="fallback">Fall Back</span> each have different control-range restrictions.</li><li>Climbing, dropping, jumping and Accessible terrain can consume movement allowance even when horizontal displacement is small.</li><li>Current commentary says combined vertical climbing distance is totalled before rounding. An operative can continue a climb onto the next terrain when the next section is within 1" horizontally and 3" vertically.</li></ul>
+</div>
+<div class="grid">
+<div class="card"><div class="label">Charge</div><strong>Move allowance = Move + 2".</strong><p class="small">Must finish in enemy control range. A Concealed operative normally cannot Charge.</p></div>
+<div class="card"><div class="label">Jump</div><strong>From Vantage higher than 2".</strong><p class="small">Current errata allows a jump up to 4" horizontally from the edge in one straight-line increment, followed by any required drop/climb.</p></div>
+</div>
+
+<h2 id="terrain">8. Terrain concepts</h2>
+<div class="card">
+<span class="chip def" data-key="light">Light</span>
+<span class="chip def" data-key="heavyterrain">Heavy</span>
+<span class="chip def" data-key="vantage">Vantage</span>
+<span class="chip def" data-key="accessible">Accessible</span>
+<span class="chip def" data-key="insignificant">Insignificant</span>
+<span class="chip def" data-key="exposed">Exposed</span>
+<span class="chip def" data-key="ceiling">Ceiling</span>
+<div class="sep"></div>
+<p class="small">Terrain can have more than one trait. Killzone-specific rules (Volkus, Gallowdark, Tomb World, Bheta-Decima, etc.) can add or replace interactions, so check the relevant killzone rules as well as the core rules.</p>
+</div>
+
+<h2 id="damage">9. Damage, wounds & injured</h2>
+<div class="card">
+<ul><li>Damage reduces an operative's remaining wounds.</li><li>An operative below its starting wounds is <b>wounded</b>.</li><li>An operative below half its starting wounds is <span class="chip" data-key="injured">injured</span>.</li><li>At 0 wounds or less it is <b>incapacitated</b> and removed after any permitted before-removal rules are resolved.</li><li>Current rules limit an incapacitated operative to at most one free action before removal, excluding Place Marker, when a rule permits such an action.</li></ul>
+</div>
+
+<h2 id="weapons">10. Weapon rules A–Z</h2>
+<div class="card"><div class="label">Tap for explanation</div>
+<span class="chip weapon" data-key="accurate">Accurate x</span>
+<span class="chip weapon" data-key="balanced">Balanced</span>
+<span class="chip weapon" data-key="blast">Blast x</span>
+<span class="chip weapon" data-key="brutal">Brutal</span>
+<span class="chip weapon" data-key="ceaseless">Ceaseless</span>
+<span class="chip weapon" data-key="devastating">Devastating x</span>
+<span class="chip weapon" data-key="heavy">Heavy</span>
+<span class="chip weapon" data-key="hot">Hot</span>
+<span class="chip weapon" data-key="lethal">Lethal x+</span>
+<span class="chip weapon" data-key="limited">Limited x</span>
+<span class="chip weapon" data-key="piercing">Piercing x</span>
+<span class="chip weapon" data-key="piercingcrits">Piercing Crits x</span>
+<span class="chip weapon" data-key="punishing">Punishing</span>
+<span class="chip weapon" data-key="range">Range x</span>
+<span class="chip weapon" data-key="relentless">Relentless</span>
+<span class="chip weapon" data-key="rending">Rending</span>
+<span class="chip weapon" data-key="saturate">Saturate</span>
+<span class="chip weapon" data-key="seek">Seek / Seek Light</span>
+<span class="chip weapon" data-key="severe">Severe</span>
+<span class="chip weapon" data-key="shock">Shock</span>
+<span class="chip weapon" data-key="silent">Silent</span>
+<span class="chip weapon" data-key="stun">Stun</span>
+<span class="chip weapon" data-key="torrent">Torrent x</span>
+</div>
+
+<h2 id="updates">11. Current clarifications worth remembering</h2>
+<div class="card">
+<ul>
+<li><b>Counteract:</b> current errata excludes Guard. The operative cannot move more than 2", and if a rule removes and sets it up again it must be set up within the permitted 2" counteract limit.</li>
+<li><b>Cover + obscured:</b> the same terrain feature cannot provide both in the same shooting sequence; the defender chooses one if both would otherwise apply.</li>
+<li><b>Heavy weapons:</b> movement restriction applies during an activation or counteraction.</li>
+<li><b>Severe:</b> a critical generated by Severe can enable Devastating and Piercing Crits, but does not enable Punishing or Rending.</li>
+<li><b>Torrent:</b> secondary targets must themselves be valid targets and cannot be within control range of friendly operatives.</li>
+<li><b>Guard:</b> in Close Quarters killzones, an operative that actually interrupts from Guard cannot also counteract later that turning point.</li>
+<li><b>Precedence:</b> when rules still conflict after higher-priority principles are applied, current errata places the active operative's controlling player ahead of the initiative player for the relevant tie-break.</li>
+</ul>
+</div>
+
+<h2>Official sources</h2>
+<div class="card">
+<ul>
+<li><a href="https://www.warhammer-community.com/en-gb/downloads/kill-team/" target="_blank" rel="noopener">Games Workshop – Kill Team Downloads</a> — current Core Rules Update Log, Lite Rules, Universal Equipment and mission packs.</li>
+<li><a href="https://assets.warhammer-community.com/eng_jun25_kt_lite_rules-5yqs3aeeud-r6homxqjvf.pdf" target="_blank" rel="noopener">Games Workshop – Kill Team Lite Rules</a>.</li>
+</ul>
+<div class="small">Reference checked against the official Kill Team downloads available October 2026. Always use the newest GW update log if a later update is published.</div>
+</div>
+
+<div class="footer">Unofficial player reference. Kill Team and associated terms are © Games Workshop Limited. This page summarizes gameplay rules and does not reproduce the Core Book.</div>
+</div>
+
+<div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">×</button><h3 id="modalTitle"></h3><p id="modalText"></p></div></div>
+<script>
+const defs={
+engage:["ENGAGE ORDER","An Engage operative can normally perform offensive actions such as Shoot and Charge. If visible, it can normally be selected as a shooting target. An expended operative with an Engage order can be selected to counteract when the counteract conditions are met."],
+conceal:["CONCEAL ORDER","A Concealed operative that is in cover is normally not a valid shooting target. It also normally cannot perform Shoot or Charge actions unless another rule specifically permits it."],
+apl:["APL","Action Point Limit. During an activation, an operative can spend AP up to its current APL. If APL changes during the activation, use the current value for how much more AP can be spent; previously spent AP is not undone."],
+commandreroll:["COMMAND RE-ROLL","A firefight ploy used after rolling attack or defence dice. Re-roll one of those dice. Unlike most other ploys, Command Re-roll can be used more than once in a turning point if you can pay for it, but each individual die is still subject to normal re-roll restrictions."],
+counteract:["COUNTERACT","If all your operatives are expended while the opponent still has ready operatives, when you would otherwise activate you can choose an expended friendly operative with an Engage order to perform one 1AP action for free. It can counteract only once per turning point. Guard is excluded. Movement or remove-and-set-up effects are limited to the current 2-inch counteract restriction."],
+reposition:["REPOSITION — 1AP","Move up to the operative's Move characteristic to a legal final position. It cannot normally move within enemy control range. It cannot be performed while already in enemy control range or during the same activation as Charge or Fall Back."],
+dash:["DASH — 1AP","Move as for Reposition, but no more than 3 inches. A Dash cannot be used to climb. It cannot normally be used while in enemy control range or during the same activation as Charge."],
+charge:["CHARGE — 1AP","Move like Reposition with an allowance equal to Move plus 2 inches. It can enter enemy control range and must finish in enemy control range. A Concealed operative normally cannot Charge. Charge is incompatible with Reposition, Dash and Fall Back in the same activation."],
+fallback:["FALL BACK — 2AP","Used to leave enemy control range. Move like Reposition, except the operative can pass through enemy control range but must finish outside it. It normally requires an enemy to be in its control range when the action starts."],
+shoot:["SHOOT — 1AP","Resolve a ranged attack using one ranged weapon. The active operative normally needs Engage and cannot normally Shoot while an enemy is within its control range. Follow the six-stage attack/defence sequence."],
+fight:["FIGHT — 1AP","Select an enemy operative in control range. Both players choose melee weapons and roll attacks. Starting with the attacker, alternate resolving successes as strikes or blocks until the sequence ends."],
+visible:["VISIBLE","Look from the viewing operative's head. If an unobstructed straight line can be drawn to any part of the other model, excluding bases, it is visible. Visibility alone does not guarantee that a model is a valid shooting target."],
+control:["CONTROL RANGE","Normally something is in an operative's control range if it is visible to and within 1 inch of that operative. Control range between operatives is mutual once established."],
+cover:["COVER","Cover is determined from one operative to another using intervening terrain close to the target. A target within 2 inches of the shooter cannot be in cover against that shooter. Cover can protect a Concealed target from selection and normally allows one defence die to be retained as a normal success."],
+obscured:["OBSCURED","Obscured is separate from cover and is normally produced by qualifying Heavy terrain or another rule between attacker and target. It modifies the shooting interaction according to the obscuring rule. The same terrain feature cannot provide both cover and obscured in one sequence; if it would, the defender chooses which one applies."],
+injured:["INJURED","An operative with fewer than half of its starting wounds is injured. Subtract 2 inches from its Move characteristic and worsen the Hit characteristic of its weapons by 1, unless another rule says it ignores those changes."],
+range:["RANGE x","Only operatives within x of the active operative can be valid targets for that weapon."],
+accurate:["ACCURATE x","Before rolling attack dice, up to x attack dice can be retained as normal successes without rolling."],
+balanced:["BALANCED","Re-roll one attack die after rolling."],
+blast:["BLAST x","After resolving the attack against the primary target, resolve a separate attack with that weapon against each qualifying secondary operative visible to and within x of the primary target. Blast has special target-selection treatment defined by the current rules."],
+brutal:["BRUTAL","In a Fight action, the opponent can only block successes from this weapon using critical successes."],
+ceaseless:["CEASELESS","Choose one rolled result and re-roll any of your attack dice showing that result."],
+devastating:["DEVASTATING x","Each retained critical success immediately inflicts x damage in addition to the critical still remaining available to resolve later. A distance before Devastating can extend that immediate damage to nearby visible operatives as specified by the weapon rule."],
+heavy:["HEAVY","An operative cannot use this weapon in an activation or counteraction in which it moved, and cannot move in an activation or counteraction in which it used the weapon. Heavy (x only) permits only the named movement action."],
+hot:["HOT","After using the weapon, roll a D6. If the result is below the weapon's current Hit characteristic, the firing operative suffers damage equal to twice the die result. Multiple attack sequences from one action still produce one Hot roll."],
+lethal:["LETHAL x+","Successful attack dice equal to or greater than x are critical successes. Example: Lethal 5+ makes successful 5s and 6s critical."],
+limited:["LIMITED x","After the operative has used this weapon x times during the battle, it no longer has the weapon. Multiple sequences created by one action, such as Blast, count as one use."],
+piercing:["PIERCING x","Reduce the number of defence dice the defender collects by x."],
+piercingcrits:["PIERCING CRITS x","Piercing x applies if the attacker retained at least one critical success. Under current rules, a critical created by Severe can activate Piercing Crits."],
+punishing:["PUNISHING","If at least one critical success was retained, one failed attack die can be retained as a normal success. A critical created only by Severe does not activate Punishing."],
+relentless:["RELENTLESS","Re-roll any of your attack dice after rolling, subject to normal limits on re-rolling the same die."],
+rending:["RENDING","If at least one qualifying critical success was retained, one retained normal success can become a critical success. A critical created only by Severe does not activate Rending."],
+saturate:["SATURATE","The defender cannot retain a cover save. The target can still count as being in cover for other purposes."],
+seek:["SEEK / SEEK LIGHT","Seek changes how terrain can be used for cover when determining valid targets. Seek Light applies specifically to Light terrain; full Seek is broader. It does not automatically erase every other benefit of cover."],
+severe:["SEVERE","If no critical success is retained, change one retained normal success to a critical. That critical can trigger Devastating and Piercing Crits, but not Punishing or Rending under the current errata."],
+shock:["SHOCK","In a Fight, the first time you strike with a critical success, also discard one unresolved normal success from the opponent; if there is none, discard one unresolved critical instead."],
+silent:["SILENT","The operative can perform Shoot with this weapon while it has a Conceal order."],
+stun:["STUN","If at least one critical success is retained, subtract 1 from the target's APL until the end of that operative's next activation."],
+torrent:["TORRENT x","Select a valid primary target, then any number of other valid targets within x of it as secondary targets, excluding secondary targets that are within control range of friendly operatives. Resolve attacks separately."],
+light:["LIGHT TERRAIN","Light is a terrain trait used mainly for cover and several target-selection interactions. It does not normally create obscuring in the way Heavy terrain can."],
+heavyterrain:["HEAVY TERRAIN","Heavy terrain can provide cover and is the main terrain category involved in obscuring. The exact interaction depends on intervening geometry, distance and any killzone-specific rules."],
+vantage:["VANTAGE TERRAIN","Elevated terrain that grants special shooting benefits against operatives below. Vantage can affect how Conceal and Light-cover interactions work, but it does not simply remove all cover."],
+accessible:["ACCESSIBLE TERRAIN","A terrain trait that allows operatives to move through the designated part with an additional movement cost rather than navigating around it. That extra cost counts toward movement restrictions, including the 2-inch counteract limit."],
+insignificant:["INSIGNIFICANT TERRAIN","This terrain is ignored for certain visibility/cover or movement purposes as defined by the terrain rules. It is commonly used for tiny decorative parts that should not meaningfully protect operatives."],
+exposed:["EXPOSED TERRAIN","A terrain trait used for parts that do not provide protective cover in the normal way. Check the specific killzone terrain legend because traits can be combined."],
+ceiling:["CEILING TERRAIN","Current core errata adds Ceiling terrain. Operatives on round bases of 50mm or less, or oval 60×35mm bases, can move underneath it regardless of model height, but must still finish in a legal position."]
+};
+const modal=document.getElementById('modal'),sheet=modal.querySelector('.sheet'),title=document.getElementById('modalTitle'),body=document.getElementById('modalText');let last=null;
+function openDef(k,e){const d=defs[k];if(!d)return;last=e;title.textContent=d[0];body.textContent=d[1];modal.classList.add('open');sheet.style.left='50%';sheet.style.top='50%';sheet.style.transform='translate(-50%,-50%)';if(e&&innerWidth>=700)requestAnimationFrame(()=>{const r=e.getBoundingClientRect(),s=sheet.getBoundingClientRect(),g=10,p=12;let l=r.right+g,t=r.top+r.height/2-s.height/2;if(l+s.width>innerWidth-p)l=r.left-s.width-g;if(l<p)l=(innerWidth-s.width)/2;t=Math.max(p,Math.min(t,innerHeight-s.height-p));sheet.style.left=l+'px';sheet.style.top=t+'px';sheet.style.transform='none'})}
+function closeDef(){modal.classList.remove('open');if(last)last.focus({preventScroll:true})}
+document.querySelectorAll('[data-key]').forEach(e=>e.onclick=()=>openDef(e.dataset.key,e));closeBtn.onclick=closeDef;modal.onclick=e=>{if(e.target===modal)closeDef()};document.onkeydown=e=>{if(e.key==='Escape')closeDef()};
+</script>
+</body></html>
